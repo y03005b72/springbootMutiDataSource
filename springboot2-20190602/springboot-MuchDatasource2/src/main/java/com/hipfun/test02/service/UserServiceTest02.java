@@ -20,7 +20,8 @@ public class UserServiceTest02 {
 	private UserMapperTest02 userMapperTest02;
 
 	@SuppressWarnings("unused")
-	@Transactional
+	//多数据源要指定事务管理器
+	@Transactional(transactionManager = "test2TransactionManager")
 	public int insert(String name, Integer age) {
 		UUID uuid = UUID.randomUUID();
 		String id = uuid.toString().replace("-", "");

@@ -20,7 +20,7 @@ public class UserServiceTest01 {
 	private UserMapperTest01 userMapperTest01;
 
 	@SuppressWarnings("unused")
-	@Transactional
+	@Transactional(transactionManager = "test1TransactionManager")
 	public int insert(String name, Integer age) {
 		UUID uuid = UUID.randomUUID();
 		String id = uuid.toString().replace("-", "");
